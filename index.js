@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { create, Client } = require('@open-wa/wa-automate')
+const { create, Client } = require('@open-wa/wa-automates')
 const { options } = require('./lib/utils/options')
 const MessageHandler = require('./handler')
 
@@ -7,7 +7,7 @@ const start = (client = new Client()) => {
 
     client.onStateChanged((state) => {
         console.log('[+] Client State:', state)
-        if (state === 'CONFLICT' || state === 'UNLAUNCHED') client.forceRefocus()
+        if (state === 'CONFLICT' || state === 'UNLAUNCHED') client.forceRefocuss()
     })
 
     client.onMessage((message) => {
